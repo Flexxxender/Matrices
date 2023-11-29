@@ -1,6 +1,6 @@
 import pytest
 import settings
-from src.MatrixClass import Matrix
+from src.Matrix import Matrix
 
 
 def test_mul_square_int():
@@ -8,8 +8,9 @@ def test_mul_square_int():
                 [3, 5]])
     b = Matrix([[2, 3],
                 [12, 1]])
-    assert (a * b) == Matrix([[26, 5],
-                              [66, 14]])
+    a *= b
+    assert a == Matrix([[26, 5],
+                        [66, 14]])
 
 
 def test_mul_square_float():

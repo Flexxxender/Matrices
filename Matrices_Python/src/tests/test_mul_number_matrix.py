@@ -1,6 +1,6 @@
 import pytest
 import settings
-from src.MatrixClass import Matrix
+from src.Matrix import Matrix
 
 
 def test_mul_number_simple():

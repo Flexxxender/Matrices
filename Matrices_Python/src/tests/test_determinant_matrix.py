@@ -1,6 +1,6 @@
 import pytest
 import settings
-from src.MatrixClass import Matrix
+from src.Matrix import Matrix
 
 
 def test_determinant_simple_2x2():

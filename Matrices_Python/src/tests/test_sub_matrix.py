@@ -1,6 +1,6 @@
 import pytest
 import settings
-from src.MatrixClass import Matrix
+from src.Matrix import Matrix
 
 
 def test_sub_simple_int():
@@ -8,8 +8,9 @@ def test_sub_simple_int():
                 [3, 5]])
     b = Matrix([[2, 3],
                 [12, 1]])
-    assert (a - b) == Matrix([[-1, -1],
-                              [-9, 4]])
+    a -= b
+    assert a == Matrix([[-1, -1],
+                        [-9, 4]])
 
 
 def test_sub_simple_float():

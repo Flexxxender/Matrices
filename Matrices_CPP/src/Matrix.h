@@ -1,49 +1,55 @@
 #ifndef MATRIX_H
 #define MATRIX_H
 
-class S21Matrix{
-private:
-    int rows_, cols_;          
-    double **matrix_;         
+#include <cmath>
+#include <iostream>
 
-    S21Matrix MatrixCutCopy(S21Matrix A, int row, int column);
-    double RecursiveDeterminant(S21Matrix A);
-public:
-    S21Matrix();
-    S21Matrix(int rows, int cols);
-    S21Matrix(const S21Matrix& other);
-    S21Matrix(S21Matrix&& other);
+class Matrix {
+ private:
+  int rows_, cols_;
+  double** matrix_;
 
-    ~S21Matrix();
+  Matrix MatrixCutCopy(Matrix A, int row, int column);
+  double RecursiveDeterminant(Matrix A);
 
-    double& operator ()(int row, int col) const;
-    S21Matrix operator +(const S21Matrix& other) const;
-    S21Matrix operator -(const S21Matrix& other) const;
-    S21Matrix operator *(const S21Matrix& other) const;
-    S21Matrix operator *(double other) const;
-    S21Matrix& operator +=(const S21Matrix& other);
-    S21Matrix& operator -=(const S21Matrix& other);
-    S21Matrix& operator *=(const S21Matrix& other);
-    S21Matrix& operator *=(double other);
-    S21Matrix& operator =(const S21Matrix& other);
-    bool operator ==(const S21Matrix& other);
+ public:
+  Matrix();
+  Matrix(int rows, int cols);
+  Matrix(int rows, int cols, double** matrix);
+  Matrix(const Matrix& other);
+  Matrix(Matrix&& other);
 
-    void SumMatrix(const S21Matrix& other);
-    void SubMatrix(const S21Matrix& other);
-    void MulNumber(const double num);
-    bool EqMatrix(const S21Matrix& other);
-    S21Matrix Transpose();
-    void MulMatrix(const S21Matrix& other);
-    double Determinant();
-    S21Matrix CalcComplements();
-    S21Matrix InverseMatrix();
-    
-    void Print();
-    void Free();
-    int GetRows() const;
-    int GetCols() const;
-    void SetRows(int newRows);
-    void SetCols(int newCols);
+  ~Matrix();
+
+  double& operator()(int row, int col) const;
+  Matrix operator+(const Matrix& other) const;
+  Matrix operator-(const Matrix& other) const;
+  Matrix operator*(const Matrix& other) const;
+  Matrix operator*(double other) const;
+  Matrix& operator+=(const Matrix& other);
+  Matrix& operator-=(const Matrix& other);
+  Matrix& operator*=(const Matrix& other);
+  Matrix& operator*=(double other);
+  Matrix& operator=(const Matrix& other);
+  bool operator==(const Matrix& other);
+
+  void SumMatrix(const Matrix& other);
+  void SubMatrix(const Matrix& other);
+  void MulNumber(const double num);
+  bool EqMatrix(const Matrix& other);
+  Matrix Transpose();
+  void MulMatrix(const Matrix& other);
+  double Determinant();
+  Matrix CalcComplements();
+  Matrix InverseMatrix();
+
+  void Print();
+  void Free();
+  void Copy(const Matrix& other);
+  int GetRows() const;
+  int GetCols() const;
+  void SetRows(int newRows);
+  void SetCols(int newCols);
 };
 
-#endif 
+#endif

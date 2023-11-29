@@ -1,6 +1,6 @@
 import pytest
 import settings
-from src.MatrixClass import Matrix
+from src.Matrix import Matrix
 
 
 def test_sum_simple_int():
@@ -8,8 +8,9 @@ def test_sum_simple_int():
                 [3, 5]])
     b = Matrix([[2, 3],
                 [12, 1]])
-    assert (a + b) == Matrix([[3, 5],
-                              [15, 6]])
+    a += b
+    assert a == Matrix([[3, 5],
+                        [15, 6]])
 
 
 def test_sum_simple_float():

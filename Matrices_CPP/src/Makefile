@@ -41,6 +41,7 @@ gcov_report: clean
 	lcov -c -d ./ -o $(REPORT_FILE)
 	lcov -r $(REPORT_FILE) "/usr*" -o $(REPORT_FILE)
 	genhtml -o report $(REPORT_FILE)
+	rm -rf *.gcda *.gcno gcov_report.* gcov_report *.info
 
 format:
 	-mv ../materials/.clang-format ./

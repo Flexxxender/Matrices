@@ -1,6 +1,6 @@
 MAKE = make
-PYTHON_DIR = -C ./Matrices_CPP/src
-CPP_DIR = -C ./Matrices_Python/src
+CPP_DIR = -C ./Matrices_CPP/src
+PYTHON_DIR = -C ./Matrices_Python/src
 
 
 clean:
@@ -33,3 +33,7 @@ cpp_time:
 	$(MAKE) $(CPP_DIR) time_tests	
 	
 time: python_time cpp_time
+
+
+cpp_leaks:
+	$(MAKE) $(CPP_DIR) leaks

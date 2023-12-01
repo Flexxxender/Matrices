@@ -37,3 +37,6 @@ time: python_time cpp_time
 
 cpp_leaks:
 	$(MAKE) $(CPP_DIR) leaks
+
+cpp_build:
+	$(MAKE) $(CPP_DIR) 

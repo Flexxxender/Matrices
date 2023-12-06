@@ -211,10 +211,12 @@ class Matrix:
         if self.rows != self.columns:
             raise Exception("The inverse matrix can only be found for a square matrix")
 
-        if self.det() == 0:
+        det = self.det()
+
+        if det == 0:
             raise Exception("The inverse matrix can only be found in the case of a non-zero determinant")
 
-        return (self.calc_complements() * (1 / self.det())).transpose()
+        return (self.calc_complements() * (1 / det)).transpose()
 
     def __recursive_det(self, a: Matrix) -> float:
         """ private method for finding determinant """

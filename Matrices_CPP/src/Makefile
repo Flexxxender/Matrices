@@ -30,7 +30,7 @@ Matrix.a: build
 	ranlib $(LIB_MAIN)
 
 clean:
-	rm -rf *.out *.gcda *.gcno *.info report gcov_report *.a
+	rm -rf *.out *.o *.gcda *.gcno *.info report gcov_report *.a
 
 rebuild:
 	make clean

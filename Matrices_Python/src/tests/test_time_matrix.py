@@ -36,7 +36,7 @@ def test_mul_time_consuming():
     a = Matrix(a_matrix)
     b = Matrix(b_matrix)
     assert (a * b) == Matrix(c_matrix)
-
+#
 
 def test_det_time_consuming():
     a = Matrix([[-1, 2, 5, 5, 1, 5, 7, 6, 8, 1],
